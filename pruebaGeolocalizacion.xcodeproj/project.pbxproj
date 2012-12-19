@@ -18,6 +18,8 @@
 		A71A5FB1167EDD3500015F10 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A71A5FB0167EDD3500015F10 /* Default-568h@2x.png */; };
 		A71A5FB4167EDD3500015F10 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A5FB2167EDD3500015F10 /* MainStoryboard.storyboard */; };
 		A71A5FB7167EDD3500015F10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71A5FB6167EDD3500015F10 /* ViewController.m */; };
+		A71A5FBE167EDD6F00015F10 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71A5FBD167EDD6F00015F10 /* CoreLocation.framework */; };
+		A7C79C2F16813D970053D66E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C79C2E16813D970053D66E /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		A71A5FB3167EDD3500015F10 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A71A5FB5167EDD3500015F10 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A71A5FB6167EDD3500015F10 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A71A5FBD167EDD6F00015F10 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A7C79C2E16813D970053D66E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7C79C2F16813D970053D66E /* MapKit.framework in Frameworks */,
+				A71A5FBE167EDD6F00015F10 /* CoreLocation.framework in Frameworks */,
 				A71A5F9B167EDD3500015F10 /* UIKit.framework in Frameworks */,
 				A71A5F9D167EDD3500015F10 /* Foundation.framework in Frameworks */,
 				A71A5F9F167EDD3500015F10 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +79,8 @@
 		A71A5F99167EDD3500015F10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7C79C2E16813D970053D66E /* MapKit.framework */,
+				A71A5FBD167EDD6F00015F10 /* CoreLocation.framework */,
 				A71A5F9A167EDD3500015F10 /* UIKit.framework */,
 				A71A5F9C167EDD3500015F10 /* Foundation.framework */,
 				A71A5F9E167EDD3500015F10 /* CoreGraphics.framework */,
@@ -292,6 +300,7 @@
 				A71A5FBC167EDD3500015F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
