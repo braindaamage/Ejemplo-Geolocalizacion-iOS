@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@interface ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *precision;
 @property (weak, nonatomic) IBOutlet UITextField *longitud;
 @property (weak, nonatomic) IBOutlet UITextField *latitud;

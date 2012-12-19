@@ -17,11 +17,19 @@
 - (void)viewDidLoad
 {
     
+    // Setea delegado Mapa
+    [self.mapa setDelegate:self];
+    
+    // Instancia location
     self.location = [[CLLocationManager alloc] init];
     
+    // Setea Location
     [self.location setDelegate:self];
     [self.location setDesiredAccuracy:kCLLocationAccuracyBest];
-    [self.location setDistanceFilter:kCLDistanceFilterNone];
+    // Setea Filtro de distancia a 10 metros
+    [self.location setDistanceFilter: 10.0f];
+    
+    // Inicia obtención de localización
     [self.location startUpdatingLocation];
     
     
@@ -46,18 +54,35 @@
     NSString *pre = [[NSString alloc]initWithFormat:@"%f", newLocation.horizontalAccuracy];
     [self.precision setText:pre];
     
-    // Setea centro en mapa
+    // Zoom del mapa
     MKCoordinateSpan span;
     span.latitudeDelta = .01;
     span.longitudeDelta = .01;
+    
     MKCoordinateRegion region;
+    // Setea centro en mapa y zoom
     region.center = newLocation.coordinate;
     region.span = span;
     
+    
+    // Setea circulo a 500m
+    MKCircle *circle = [MKCircle circleWithCenterCoordinate:newLocation.coordinate radius:500];
+    
+    // Elimina circulos en el mapa
+    [self.mapa removeOverlays: [self.mapa overlays]];
+    
+    // Dibuja circulo en mapa
+    [self.mapa addOverlay:circle];
+    
+    
+    // acutaliza mapa
     [self.mapa setRegion:region animated:YES];
     
+    //[self.location stopUpdatingLocation];
 }
 
+
+// Error al obtener localización
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSString *msg = @"Error al obtener localización";
     
@@ -74,6 +99,14 @@
 }
 
 
+// Delegado MapKit para generar circulo
+- (MKOverlayView *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
+    //circleView.strokeColor = [[UIColor redColor] colorWithAlphaComponent:0.1];
+    circleView.fillColor = [[UIColor redColor] colorWithAlphaComponent:0.1];
+    return circleView;
+}
 
 - (void)didReceiveMemoryWarning
 {
